@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Shameer Hassan{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-layout">
+
+            <div class="hero-left">
+
+                <img
+                    src="{{ url_for('static', filename='images/shameer1portfolio.png    ') }}"
+                    alt="Shameer Hassan"
+                    class="profile-image"
+                    style="width: 90%; max-width: 350px; aspect-ratio: 1/1; object-fit: cover; object-position: top; border-radius: 50%; display: block; margin: 0 auto;"
+                                    >
+                  
+                
+
+            </div>
+
+            <div class="hero-right">
+
+                <div class="status-badge">
+                    ● SYSTEM STATUS : ONLINE
+                </div>
+
+                <h1>Shameer Hassan</h1>
+
+                <h2>
+                    Cyber Security Intern &
+                    Full-Stack Developer
+                </h2>
+
+                <div class="typing-container">
+                    <span id="typing-text"></span>
+                </div>
+
+                <p class="hero-description">
+
+                    Cyber Security student at FAST National University
+                    passionate about secure software development,
+                    threat detection, phishing prevention,
+                    network security, and scalable full-stack systems.
+
+                    Experienced through enterprise exposure at
+                    e& (Etisalat) and multiple software engineering
+                    and cybersecurity projects.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="{{ url_for('projects') }}"
+                       class="btn-primary">
+
+                        View Projects
+
+                    </a>
+
+                    <a href="{{ url_for('contact') }}"
+                       class="btn-secondary">
+
+                        Contact Me
+
+                    </a>
+
+                    <a href="{{ url_for('static',
+                        filename='Shameer_Hassan_CV.pdf') }}"
+                        class="btn-secondary"
+                        download>
+
+                        Download CV
+
+                    </a>
+
+                </div>
+
+                <div class="social-links">
+
+                    <a
+                        href="https://github.com/shameer-hassan"
+                        target="_blank"
+                        class="social-btn">
+
+                        GitHub
+
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/shameer-hassan-499146325/"
+                        target="_blank"
+                        class="social-btn">
+
+                        LinkedIn
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <h3>FAST</h3>
+
+                <p>
+                    Bachelor of Cyber Security
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>e&</h3>
+
+                <p>
+                    Cyber Security Internship
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>3+</h3>
+
+                <p>
+                    Major Technical Projects
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="terminal-section">
+
+    <div class="container">
+
+        <div class="terminal-box">
+
+            <div class="terminal-header">
+
+                security-terminal.sh
+
+            </div>
+
+            <div class="terminal-body">
+
+                <p>> Loading profile...</p>
+                <p>> FAST Cyber Security Student</p>
+                <p>> Internship : e& (Etisalat)</p>
+                <p>> Threat Detection : ACTIVE</p>
+                <p>> Secure Development : ACTIVE</p>
+                <p>> Full Stack Engineering : ACTIVE</p>
+                <p>> Status : AVAILABLE</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <div class="skills-dashboard">
+
+        <h2>Security Skill Matrix</h2>
+
+        <div class="skill-row">
+
+            <span>Python</span>
+
+            <div class="skill-progress">
+                <div class="fill python-fill"></div>
+            </div>
+
+        </div>
+
+        <div class="skill-row">
+
+            <span>C++</span>
+
+            <div class="skill-progress">
+                <div class="fill cpp-fill"></div>
+            </div>
+
+        </div>
+
+        <div class="skill-row">
+
+            <span>JavaScript</span>
+
+            <div class="skill-progress">
+                <div class="fill js-fill"></div>
+            </div>
+
+        </div>
+
+        <div class="skill-row">
+
+            <span>Cyber Security</span>
+
+            <div class="skill-progress">
+                <div class="fill cyber-fill"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

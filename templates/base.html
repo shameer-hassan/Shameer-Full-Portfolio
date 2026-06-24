@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}Shameer Hassan{% endblock %}
+    </title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="{{ url_for('home') }}"
+           class="logo">
+
+            &lt;SHAMEER<span>_</span>&gt;
+
+        </a>
+
+        <ul class="nav-links"
+            id="navLinks">
+
+            <li>
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('about') }}">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('projects') }}">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('contact') }}">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="hamburger"
+             onclick="toggleMenu()">
+
+            ☰
+
+        </div>
+
+    </div>
+
+</nav>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+<div class="flash-container">
+
+    {% for category, message in messages %}
+
+    <div class="flash-message {{ category }}">
+
+        {{ message }}
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endif %}
+{% endwith %}
+
+<main>
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>
+                    Shameer Hassan
+                </h3>
+
+                <p>
+                    Cyber Security Intern &
+                    Full Stack Developer
+                </p>
+
+                <p>
+                    Focused on secure software,
+                    threat detection,
+                    and scalable applications.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+
+                <a href="{{ url_for('about') }}">
+                    About
+                </a>
+
+                <a href="{{ url_for('projects') }}">
+                    Projects
+                </a>
+
+                <a href="{{ url_for('contact') }}">
+                    Contact
+                </a>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <a href="mailto:shameerhassan4273@gmail.com">
+                    Email
+                </a>
+
+                <a href="https://github.com/shameer-hassan"
+                   target="_blank">
+
+                    GitHub
+
+                </a>
+
+                <a href="https://www.linkedin.com/in/shameer-hassan-499146325/"
+                   target="_blank">
+
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2026 Shameer Hassan.
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+function toggleMenu() {
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
+
+}
+
+const texts = [
+
+    "Threat Detection",
+    "Secure Development",
+    "Network Security",
+    "Full Stack Engineering"
+
+];
+
+let textIndex = 0;
+let charIndex = 0;
+
+function typeEffect() {
+
+    const typing =
+    document.getElementById("typing-text");
+
+    if (!typing) return;
+
+    if (charIndex < texts[textIndex].length) {
+
+        typing.textContent +=
+        texts[textIndex].charAt(charIndex);
+
+        charIndex++;
+
+        setTimeout(typeEffect, 80);
+
+    }
+
+    else {
+
+        setTimeout(eraseEffect, 1200);
+
+    }
+
+}
+
+function eraseEffect() {
+
+    const typing =
+    document.getElementById("typing-text");
+
+    if (!typing) return;
+
+    if (typing.textContent.length > 0) {
+
+        typing.textContent =
+        typing.textContent.slice(0, -1);
+
+        setTimeout(eraseEffect, 40);
+
+    }
+
+    else {
+
+        textIndex =
+        (textIndex + 1) % texts.length;
+
+        charIndex = 0;
+
+        setTimeout(typeEffect, 300);
+
+    }
+
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    typeEffect
+);
+
+</script>
+
+</body>
+</html>
